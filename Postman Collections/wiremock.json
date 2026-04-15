@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "a9fa9103-061b-4edc-a73f-8a3c40da6de3",
+		"name": "WireMock",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Activate ERROR",
+			"id": "b0b6fdb0-4f0c-4274-bc43-cb77eeaf611c",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": "http://localhost:8089/__admin/mappings/22222222-2222-2222-2222-222222222222"
+			},
+			"response": []
+		},
+		{
+			"name": "Activate SUCCESS",
+			"id": "ae4c1482-8370-4ee7-9a2a-b60755eefee8",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id\": \"22222222-2222-2222-2222-222222222222\",\r\n  \"request\": {\r\n    \"method\": \"GET\",\r\n    \"urlPath\": \"/product/api/v1/products\"\r\n  },\r\n  \"response\": {\r\n    \"status\": 200,\r\n    \"headers\": {\r\n      \"Content-Type\": \"application/json\"\r\n    },\r\n    \"jsonBody\": {\r\n      \"items\": [\r\n        {\r\n          \"id\": \"3e2f6c64-6c6c-4d6e-8e1a-9b6d8e4a2c11\",\r\n          \"name\": \"Recovered Product\",\r\n          \"catalogId\": \"10c6a38f-9636-4e12-b4a7-aea37edd92a0\"\r\n        }\r\n      ],\r\n      \"page\": 0,\r\n      \"size\": 20,\r\n      \"totalItems\": 1,\r\n      \"totalPages\": 1\r\n    }\r\n  }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8089/__admin/mappings"
+			},
+			"response": []
+		},
+		{
+			"name": "Reset",
+			"id": "b9600e84-6943-414f-bf75-5da129140ece",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": "http://localhost:8089/__admin/mappings/reset"
+			},
+			"response": []
+		}
+	]
+}
