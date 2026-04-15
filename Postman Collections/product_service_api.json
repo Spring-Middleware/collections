@@ -1,0 +1,2765 @@
+{
+	"info": {
+		"_postman_id": "61b943ae-93d6-460a-a0b6-621114fa8624",
+		"name": "Product Service API",
+		"description": "Product-service for Spring-Middleware demo.\nInternal service intended to be called ONLY by catalog-service (service-to-service).\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "products",
+							"item": [
+								{
+									"name": "bulk",
+									"item": [
+										{
+											"name": "Bulk create products",
+											"id": "d7ea499a-7d8f-4c01-8e88-a57bf1bee5de",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "product.read product.write",
+														"clientSecret": "z34lcQzxHNtyeQfazzhCxhmIOxAnHEQx",
+														"clientId": "product-service",
+														"tokenName": "Product Service Token",
+														"grant_type": "client_credentials",
+														"password": "43130938",
+														"username": "admin",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"catalogId\": \"4ac84f87-e596-4d87-a2e0-d7f14bc43c17\",\n  \"items\": [\n    {\n      \"productType\": \"DIGITAL\",\n      \"sku\": \"DIGI-JAVA-002\",\n      \"name\": \"Curso Java Avanzado – Nivel 2\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 129.9,\n        \"currency\": \"EUR\"\n      },\n      \"fileSize\": 2048,\n      \"fileFormat\": \"EXE\",\n      \"downloadUrl\": \"https://downloads.example.com/cursos/java-avanzado-nivel2\"\n    },\n    {\n      \"productType\": \"DIGITAL\",\n      \"sku\": \"DIGI-KOTLIN-001\",\n      \"name\": \"Curso Kotlin desde Cero\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 89.9,\n        \"currency\": \"EUR\"\n      },\n      \"fileSize\": 1500,\n      \"fileFormat\": \"MP4\",\n      \"downloadUrl\": \"https://downloads.example.com/cursos/kotlin-desde-cero\"\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"sku\": \"PHYS-MOUSE-001\",\n      \"name\": \"Ratón Inalámbrico\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 39.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"length\": 10.0,\n        \"width\": 6.0,\n        \"height\": 4.0\n      },\n      \"stockQuantity\": 100,\n      \"shippable\": true\n    }\n  ]\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products/bulk"
+											},
+											"response": [
+												{
+													"id": "810a3c4f-f6f0-4684-8845-f057b708c753",
+													"name": "201 response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkCreateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Created",
+													"code": 201,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5e2fc138-5765-4f28-8c43-4b5e2014ef3b",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkCreateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "aa6a2b47-548f-45ee-ba05-8ba7cddfecf8",
+													"name": "401 response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkCreateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "a4dba71f-b500-4350-aafb-239779c6fa8d",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkCreateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "891a2686-8940-49ff-a06a-3090524dd634",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkCreateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Bulk replace products",
+											"id": "b0e6d815-b3d6-434b-a8ec-4e1b81d4f3e0",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "catalog.read catalog.write",
+														"grant_type": "client_credentials",
+														"clientSecret": "zaaWSEjJpImdyznM2tx92e1hqCwGdgg1",
+														"password": "43130938",
+														"username": "admin",
+														"clientId": "catalog-service",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"catalogId\": \"4ac84f87-e596-4d87-a2e0-d7f14bc43c17\",\n  \"items\": [\n    {\n      \"productType\": \"DIGITAL\",\n      \"id\": \"67634d95-8585-45c7-a177-8a29d1b9ffa6\",\n      \"sku\": \"PROD-001-V2\",\n      \"name\": \"Product 1 (Updated)\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 21.99,\n        \"currency\": \"USD\"\n      },\n      \"fileSize\": 1536,\n      \"fileFormat\": \"pdf\",\n      \"downloadUrl\": \"https://example.com/download/product1-v2.pdf\"\n    },\n    {\n      \"productType\": \"DIGITAL\",\n      \"id\": \"f062bff5-75cc-4559-9deb-58611636ad1b\",\n      \"sku\": \"PROD-002-V2\",\n      \"name\": \"Product 2 (Updated)\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 31.99,\n        \"currency\": \"USD\"\n      },\n      \"fileSize\": 2560,\n      \"fileFormat\": \"epub\",\n      \"downloadUrl\": \"https://example.com/download/product2-v2.epub\"\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"id\": \"8bbed710-c7f5-470c-9b57-d6967430b1df\",\n      \"sku\": \"KEYB-001\",\n      \"name\": \"Teclado Mecánico Pro\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 79.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"length\": 15.0,\n        \"width\": 45.0,\n        \"height\": 5.0\n      },\n      \"stockQuantity\": 50,\n      \"shippable\": null\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"id\": \"1031d5b5-c615-4036-ac19-ab9ffd99ca91\",\n      \"sku\": \"MON-0274K-HDR\",\n      \"name\": \"Monitor 27'' 4K (Actualizado)\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 329.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"length\": 20.0,\n        \"width\": 60.0,\n        \"height\": 35.0\n      },\n      \"stockQuantity\": 18,\n      \"shippable\": null\n    }\n  ]\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products/bulk"
+											},
+											"response": [
+												{
+													"id": "75197993-14ac-435f-ab7f-0264083c2aa5",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkReplaceRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5d983413-4273-4b0a-ba55-8e3524a3ad64",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkReplaceRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "24246515-3c8e-49ef-b23c-763da3037acf",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkReplaceRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "60b9088c-c04b-4683-a738-a0b6a02c2f5c",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkReplaceRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Bulk delete products",
+											"id": "7617ed28-c29f-43c4-89b9-81ef3c32dd18",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "catalog.read catalog.write",
+														"grant_type": "client_credentials",
+														"clientSecret": "zaaWSEjJpImdyznM2tx92e1hqCwGdgg1",
+														"password": "43130938",
+														"username": "admin",
+														"clientId": "catalog-service",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "DELETE",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"catalogId\": \"4ac84f87-e596-4d87-a2e1-d7f14bc43c17\",\n  \"productIds\": [\n    \"67634d95-8585-45c7-a177-8a29d1b9ffa6\",\n    \"f062bff5-75cc-4559-9deb-58611636ad1b\",\n    \"8bbed710-c7f5-470c-9b57-d6967430b1df\",\n    \"1031d5b5-c615-4036-ac19-ab9ffd99ca91\",\n    \"2eab7ff1-81d1-41d9-8c5d-96e0285a17b7\",\n    \"95155ac5-04e1-4ea5-ab81-ca7dd0a5f823\"\n  ]\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products/bulk"
+											},
+											"response": [
+												{
+													"id": "4b713357-087f-47c2-9092-adaafbb91571",
+													"name": "Products deleted",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkDeleteRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9c578fe3-1382-4d7f-ba08-025d77e61e88",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkDeleteRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0b0678ab-75b8-4518-bdfa-499d0ec3a0b8",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkDeleteRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e16bd66b-f564-4a99-a5f0-b73f84f05a14",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductBulkDeleteRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": "{{baseUrl}}/api/v1/products/bulk"
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "7292373b-6c91-416b-a34f-8deda4fa993e"
+								},
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "Get product by id",
+											"id": "19419e22-3a2a-4e5b-be46-77d6a01b6282",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "catalog.read catalog.write",
+														"grant_type": "client_credentials",
+														"clientSecret": "zaaWSEjJpImdyznM2tx92e1hqCwGdgg1",
+														"password": "43130938",
+														"username": "admin",
+														"clientId": "catalog-service",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "67634d95-8585-45c7-a177-8a29d1b9ffa6"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "917bcd06-5022-487e-bee7-a42bc80454a3",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "593143eb-fccc-45b1-9d97-62a459720b7c",
+													"name": "401 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "af8a0f37-5292-4a8c-a871-e6d7acc289b5",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9a39da5d-dd7f-4a7a-acf3-439eed1d79bc",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "f2c115f0-18db-44a5-a42e-a2ddd55ebd7c",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Replace product",
+											"id": "9d6a9e27-c943-41b4-8936-40134b55a42c",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "catalog.read catalog.write",
+														"grant_type": "client_credentials",
+														"clientSecret": "zaaWSEjJpImdyznM2tx92e1hqCwGdgg1",
+														"password": "43130938",
+														"username": "admin",
+														"clientId": "catalog-service",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"productType\": \"PHYSICAL\",\n  \"id\": \"67634d95-8585-45c7-a177-8a29d1b9ffa6\",\n  \"catalogId\": null,\n  \"sku\": \"PROD-001-V2\",\n  \"name\": \"Product 1 (Updated)\",\n  \"description\": null,\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 21.99,\n    \"currency\": \"USD\"\n  },\n  \"createdAt\": \"2026-03-17T11:54:45.804Z\",\n  \"updatedAt\": \"2026-03-18T11:18:43.928528004Z\",\n  \"dimensions\": {\n    \"length\": 20.0,\n    \"width\": 30.0,\n    \"height\": 10.0\n  },\n  \"stockQuantity\": 25,\n  \"shippable\": true\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "67634d95-8585-45c7-a177-8a29d1b9ffa6"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "b6e5b97c-27f7-45c9-873b-1292c62360f7",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "8d1fbf03-72ba-4508-be1c-d2cf39254c67",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "0c60aeb5-7460-44d0-ad35-04b15e86bdb0",
+													"name": "401 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "847daded-c439-4da7-81fd-5cea49693bb3",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "1913677e-9dac-4f08-b926-f0f4a3b7246d",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c749e0b0-951e-48b9-bf6d-671cc55fdc0c",
+													"name": "409 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Conflict",
+													"code": 409,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "7c5fe6dd-55d9-4a12-b9b8-44a3477c7d56",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Partially update product",
+											"id": "9c001882-fe1e-4143-b7ec-46efe731fb67",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "catalog.read catalog.write",
+														"grant_type": "client_credentials",
+														"clientSecret": "zaaWSEjJpImdyznM2tx92e1hqCwGdgg1",
+														"password": "43130938",
+														"username": "admin",
+														"clientId": "catalog-service",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "  {\n    \"name\": \"Product 1 (Patched)\",\n    \"productType\": \"PHYSICAL\",\n    \"price\": {\n      \"amount\": 25.99,\n      \"currency\": \"USD\"\n    }\n  }\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "67634d95-8585-45c7-a177-8a29d1b9ffa6"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "573b4af0-556f-48e2-adb8-fdbc5380db6c",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "4598cd6a-ebc6-4aeb-b9fc-346b599eb9b2",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e1112c73-6c34-4c31-831d-6cdfd9bffd91",
+													"name": "401 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "6d64bdf4-aaee-4bce-8713-869eb3579faa",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "8a6d88b5-867c-4fb9-9a31-a774d131ded7",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "49f18e9b-0751-40e5-8c32-4bf36e6ba63d",
+													"name": "409 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Conflict",
+													"code": 409,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "137c46ea-6729-425d-b5ba-d75873ecadbe",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															},
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference product-requests.yaml#/components/schemas/ProductPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete product",
+											"id": "b7ed3453-ac4d-472a-a711-47a68cb9e717",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "apikey",
+													"apikey": {
+														"key": "X-API-KEY",
+														"value": "{{apiKey}}",
+														"in": "header"
+													}
+												},
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "a14b707f-32cf-4cce-a9bb-dca09fa22c54",
+															"key": "id",
+															"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "c1495ec1-b8e6-4454-8a75-5fc07d81ace7",
+													"name": "Deleted",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5ed79303-9b64-4ec7-9eac-17b9732b1be0",
+													"name": "401 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Unauthorized",
+													"code": 401,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "e193419e-0723-457a-a08e-9e2584dc91f3",
+													"name": "403 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Forbidden",
+													"code": 403,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "eb9b8e7f-88a8-4579-8713-3d7d6b3b934f",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "41e5f982-da95-4ec9-9677-52687801c65f",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [
+															{
+																"description": "Added as a part of security scheme: apikey",
+																"key": "X-API-KEY",
+																"value": "<API Key>"
+															}
+														],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/products/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"products",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "484031d8-67f9-4195-88b8-ccef190f17ab"
+								},
+								{
+									"name": "List products",
+									"id": "192ddd74-3132-44ab-8037-8ef6c7ff4f3f",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": {
+												"clientSecret": "KPIRHbxU9Ear4qTaE55wKynwhsGtRhI2",
+												"scope": "catalog.read catalog.write",
+												"grant_type": "client_credentials",
+												"password": "43130938",
+												"username": "admin",
+												"clientId": "catalog-service",
+												"tokenName": "Catalog Service Token",
+												"addTokenTo": "header",
+												"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+											}
+										},
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/products?catalogId=4ac84f87-e596-4d87-a2e0-d7f14bc43c17&page=0&size=20&sort=sku",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"products"
+											],
+											"query": [
+												{
+													"key": "q",
+													"value": "string",
+													"description": "Optional search query by name/sku",
+													"disabled": true
+												},
+												{
+													"key": "value",
+													"value": "reference product-schema.yaml%23/components/schemas/ProductStatus not found in the OpenAPI spec",
+													"disabled": true
+												},
+												{
+													"key": "catalogId",
+													"value": "4ac84f87-e596-4d87-a2e0-d7f14bc43c17",
+													"description": "Optional filter by catalogId (for catalog-service expansions)"
+												},
+												{
+													"key": "page",
+													"value": "0"
+												},
+												{
+													"key": "size",
+													"value": "20"
+												},
+												{
+													"key": "sort",
+													"value": "sku",
+													"description": "Sort expression, e.g. \"createdAt,desc\""
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "3f43b778-cdbb-4fd8-aa45-c1c166c6b24a",
+											"name": "Paged products",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products?q=string&value=reference product-schema.yaml%23/components/schemas/ProductStatus not found in the OpenAPI spec&catalogId=c64db908-bed5-911c-2e25-ce30367c8bc4&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name/sku",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"key": "value",
+															"value": "reference product-schema.yaml#/components/schemas/ProductStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Optional filter by catalogId (for catalog-service expansions)",
+															"key": "catalogId",
+															"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+														},
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"value\": \"reference product-responses.yaml#/components/schemas/PagedProductResponse not found in the OpenAPI spec\"\n}"
+										},
+										{
+											"id": "6903ff33-23af-4db5-9dac-6f9ce87460d6",
+											"name": "400 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products?q=string&value=reference product-schema.yaml%23/components/schemas/ProductStatus not found in the OpenAPI spec&catalogId=c64db908-bed5-911c-2e25-ce30367c8bc4&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name/sku",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"key": "value",
+															"value": "reference product-schema.yaml#/components/schemas/ProductStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Optional filter by catalogId (for catalog-service expansions)",
+															"key": "catalogId",
+															"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+														},
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "e70d9c15-4694-4c7c-9760-11b8cb6f61aa",
+											"name": "401 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products?q=string&value=reference product-schema.yaml%23/components/schemas/ProductStatus not found in the OpenAPI spec&catalogId=c64db908-bed5-911c-2e25-ce30367c8bc4&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name/sku",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"key": "value",
+															"value": "reference product-schema.yaml#/components/schemas/ProductStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Optional filter by catalogId (for catalog-service expansions)",
+															"key": "catalogId",
+															"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+														},
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "e7d02167-51c4-4991-9ac6-7cc798b3d906",
+											"name": "403 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products?q=string&value=reference product-schema.yaml%23/components/schemas/ProductStatus not found in the OpenAPI spec&catalogId=c64db908-bed5-911c-2e25-ce30367c8bc4&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name/sku",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"key": "value",
+															"value": "reference product-schema.yaml#/components/schemas/ProductStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Optional filter by catalogId (for catalog-service expansions)",
+															"key": "catalogId",
+															"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+														},
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "5043f06b-a6ee-41a8-8a0b-a96ede772385",
+											"name": "500 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/products?q=string&value=reference product-schema.yaml%23/components/schemas/ProductStatus not found in the OpenAPI spec&catalogId=c64db908-bed5-911c-2e25-ce30367c8bc4&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"products"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name/sku",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"key": "value",
+															"value": "reference product-schema.yaml#/components/schemas/ProductStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Optional filter by catalogId (for catalog-service expansions)",
+															"key": "catalogId",
+															"value": "c64db908-bed5-911c-2e25-ce30367c8bc4"
+														},
+														{
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Create product",
+									"id": "77f9a8ab-5f71-4fe5-9035-cd180ad24293",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": {
+												"addTokenTo": "header",
+												"scope": "product.read product.write",
+												"clientSecret": "z34lcQzxHNtyeQfazzhCxhmIOxAnHEQx",
+												"clientId": "product-service",
+												"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token",
+												"tokenName": "Product Service Token",
+												"grant_type": "client_credentials"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											},
+											{
+												"key": "Accept",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"catalogId\": \"123e4567-e89b-12d3-a456-426614174010\",\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"description\": \"Camiseta de algodón azul talla M\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  },\n  \"productType\": \"PHYSICAL\",\n  \"dimensions\": {\n    \"length\": 30.0,\n    \"width\": 20.0,\n    \"height\": 2.0\n  },\n  \"stockQuantity\": 150,\n  \"shippable\": true\n}\n",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/products"
+									},
+									"response": [
+										{
+											"id": "1c6bb168-e8dd-4781-988f-c7f0ad802422",
+											"name": "Created",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"key": "Accept",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												},
+												{
+													"disabled": false,
+													"description": {
+														"content": "URL of the created resource",
+														"type": "text/plain"
+													},
+													"key": "Location",
+													"value": "/api/v1/products/123e4567-e89b-12d3-a456-426614174000"
+												}
+											],
+											"cookie": [],
+											"responseTime": null,
+											"body": "{\n  \"value\": \"reference product-schema.yaml#/components/schemas/Product not found in the OpenAPI spec\"\n}"
+										},
+										{
+											"id": "8a968ac4-0a2b-457c-88d9-f7a5b19c70fd",
+											"name": "400 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f207e139-30c9-472e-8b97-01af67d19a6f",
+											"name": "401 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products"
+											},
+											"status": "Unauthorized",
+											"code": 401,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "2e15e629-a61c-4fdb-a09c-457621a6a1bc",
+											"name": "403 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products"
+											},
+											"status": "Forbidden",
+											"code": 403,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "e329eb2f-7082-4c0b-80b9-22d4b6374292",
+											"name": "409 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products"
+											},
+											"status": "Conflict",
+											"code": 409,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "5c7105b5-a5cd-492f-bd46-3b8554752793",
+											"name": "500 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													},
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "X-API-KEY",
+														"value": "<API Key>"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"sku\": \"TSHIRT-BLUE-M\",\n  \"name\": \"T-Shirt Blue (M)\",\n  \"status\": \"ACTIVE\",\n  \"price\": {\n    \"amount\": 19.99,\n    \"currency\": \"EUR\"\n  }\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/products"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "72113fff-be02-4d06-bdad-0adf46221767"
+						}
+					],
+					"id": "2b6ddeae-00b0-4f91-ab62-5be80b92ede0"
+				}
+			],
+			"id": "7c14a114-c2d9-4864-9840-eae449cd59d1"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"scope": "product.read product.write",
+			"clientSecret": "z34lcQzxHNtyeQfazzhCxhmIOxAnHEQx",
+			"clientId": "product-service",
+			"grant_type": "client_credentials",
+			"tokenName": "Product Service Token",
+			"refreshRequestParams": [],
+			"tokenRequestParams": [],
+			"authRequestParams": [],
+			"challengeAlgorithm": "S256",
+			"username": "admin",
+			"password": "43130938",
+			"addTokenTo": "header",
+			"client_authentication": "header",
+			"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "d7460bc5-f99c-4e05-8fce-ac4802a71a3e",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"const tokenEndpoint = pm.variables.get(\"token_endpoint\");\r",
+					"const grantType = pm.variables.get(\"grant_type\");\r",
+					"const clientId = pm.variables.get(\"product_client_id\");\r",
+					"const clientSecret = pm.variables.get(\"product_client_secret\");\r",
+					"const scopes = pm.variables.get(\"product_scopes\");\r",
+					"\r",
+					"// Token actual\r",
+					"const currentToken = pm.environment.get(\"product_access_token\");\r",
+					"const expiresAt = pm.environment.get(\"product_token_expires_at\");\r",
+					"\r",
+					"// Tiempo actual\r",
+					"const now = Math.floor(Date.now() / 1000);\r",
+					"\r",
+					"// Margen de seguridad\r",
+					"const SAFETY_MARGIN = 30;\r",
+					"\r",
+					"// 🔍 Validar si sigue siendo válido\r",
+					"if (currentToken && expiresAt && (now < (parseInt(expiresAt) - SAFETY_MARGIN))) {\r",
+					"    console.log(\"Reutilizando product token\");\r",
+					"    return;\r",
+					"}\r",
+					"\r",
+					"console.log(\"Solicitando nuevo product token...\");\r",
+					"\r",
+					"pm.sendRequest({\r",
+					"    url: tokenEndpoint,\r",
+					"    method: \"POST\",\r",
+					"    header: {\r",
+					"        \"Content-Type\": \"application/x-www-form-urlencoded\"\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: \"urlencoded\",\r",
+					"        urlencoded: [\r",
+					"            { key: \"grant_type\", value: grantType },\r",
+					"            { key: \"client_id\", value: clientId },\r",
+					"            { key: \"client_secret\", value: clientSecret },\r",
+					"            ...(scopes ? [{ key: \"scope\", value: scopes }] : [])\r",
+					"        ]\r",
+					"    }\r",
+					"}, function (err, res) {\r",
+					"\r",
+					"    if (err) {\r",
+					"        console.error(\"Error obteniendo token:\", err);\r",
+					"        throw new Error(\"No se pudo obtener el token OAuth2\");\r",
+					"    }\r",
+					"\r",
+					"    if (!res || res.code !== 200) {\r",
+					"        console.error(\"Respuesta OAuth2 no válida:\", res ? res.text() : \"sin respuesta\");\r",
+					"        throw new Error(\"Respuesta OAuth2 no válida\");\r",
+					"    }\r",
+					"\r",
+					"    const json = res.json();\r",
+					"\r",
+					"    if (!json.access_token) {\r",
+					"        console.error(\"Respuesta sin access_token:\", json);\r",
+					"        throw new Error(\"No se encontró access_token\");\r",
+					"    }\r",
+					"\r",
+					"    // Guardar token\r",
+					"    pm.environment.set(\"product_access_token\", json.access_token);\r",
+					"\r",
+					"    // Guardar expiración real\r",
+					"    if (json.expires_in) {\r",
+					"        const expiresAt = now + parseInt(json.expires_in);\r",
+					"        pm.environment.set(\"product_token_expires_at\", expiresAt.toString());\r",
+					"    }\r",
+					"\r",
+					"    // Guardar scopes devueltos (si vienen)\r",
+					"    if (json.scope) {\r",
+					"        pm.environment.set(\"product_scopes\", json.scope);\r",
+					"    }\r",
+					"\r",
+					"    console.log(\"Nuevo product token obtenido correctamente\");\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "bcb4bfc8-ce5e-4791-8aec-f741c7fc0098",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8082"
+		}
+	]
+}
