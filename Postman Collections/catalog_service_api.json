@@ -1,0 +1,2498 @@
+{
+	"info": {
+		"_postman_id": "ed55fd18-7d3f-4b36-9c9c-1bcc06249d77",
+		"name": "Catalog Service API",
+		"description": "Reference-service (Catalog) for Spring-Middleware.\nProvides CRUD for Catalog (the \"1\" side of a 1→N relationship).\n",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "api",
+			"item": [
+				{
+					"name": "v1",
+					"item": [
+						{
+							"name": "catalogs",
+							"item": [
+								{
+									"name": "{id}",
+									"item": [
+										{
+											"name": "products",
+											"item": [
+												{
+													"name": "List products in a catalog",
+													"id": "7c2e0603-89c0-4406-bd15-0b0e08dd1c40",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": {
+																"clientSecret": "KPIRHbxU9Ear4qTaE55wKynwhsGtRhI2",
+																"scope": "catalog.read catalog.write",
+																"grant_type": "client_credentials",
+																"password": "43130938",
+																"username": "admin",
+																"clientId": "catalog-service",
+																"tokenName": "Catalog Service Token",
+																"addTokenTo": "header",
+																"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+															}
+														},
+														"method": "GET",
+														"header": [],
+														"body": {
+															"mode": "raw",
+															"raw": "",
+															"options": {
+																"raw": {
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id/products?page=0&size=20",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id",
+																"products"
+															],
+															"query": [
+																{
+																	"key": "page",
+																	"value": "0"
+																},
+																{
+																	"key": "size",
+																	"value": "20"
+																}
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "11cac832-3721-47f5-b87a-ca38fb52fe0e"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "e6111696-e1c8-4640-9a14-c5b519710cae",
+															"name": "200 response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products?page=0&size=20",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"query": [
+																		{
+																			"key": "page",
+																			"value": "0"
+																		},
+																		{
+																			"key": "size",
+																			"value": "20"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "ea6cfcd6-c491-4097-898c-5734db91c0cf",
+															"name": "404 response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products?page=0&size=20",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"query": [
+																		{
+																			"key": "page",
+																			"value": "0"
+																		},
+																		{
+																			"key": "size",
+																			"value": "20"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "ba5a99e6-1a41-47b2-a277-02ff2703a54a",
+															"name": "500 response",
+															"originalRequest": {
+																"method": "GET",
+																"header": [],
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products?page=0&size=20",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"query": [
+																		{
+																			"key": "page",
+																			"value": "0"
+																		},
+																		{
+																			"key": "size",
+																			"value": "20"
+																		}
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Add new products to a catalog (bulk). Internally calls product-service.",
+													"id": "f0e8dcb8-9f48-4be1-9786-f5188f876ea9",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": {
+																"scope": "",
+																"password": "43130938",
+																"username": "admin",
+																"clientSecret": "",
+																"clientId": "catalog-service",
+																"grant_type": "password_credentials",
+																"tokenName": "Catalog Service Token",
+																"addTokenTo": "header",
+																"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+															}
+														},
+														"method": "POST",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"products\": [\n    {\n      \"productType\": \"DIGITAL\",\n      \"name\": \"Curso Java Avanzado\",\n      \"sku\": \"DIGI-JAVA-001\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 99.90,\n        \"currency\": \"EUR\"\n      },\n      \"downloadUrl\": \"https://downloads.example.com/cursos/java-avanzado\",\n      \"fileSize\": 1500,\n      \"fileFormat\": \"EXE\"\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"name\": \"Teclado Mecánico\",\n      \"sku\": \"PHYS-KEYB-001\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 79.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"width\": 45.0,\n        \"height\": 5.0,\n        \"length\": 15.0\n      },\n      \"stockQuantity\": 50,\n      \"shippable\": true\n    }\n  ]\n}\n",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id",
+																"products"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "4ac84f87-e596-4d87-a2e0-d7f14bc43c17"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "c44a5cc4-f3bb-46c2-84de-0bfac4c0fbe0",
+															"name": "200 response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Product A\",\n      \"sku\": \"PROD-A\",\n      \"price\": {\n        \"amount\": 10,\n        \"currency\": \"EUR\"\n      }\n    },\n    {\n      \"name\": \"Product B\",\n      \"sku\": \"PROD-B\",\n      \"price\": {\n        \"amount\": 20,\n        \"currency\": \"EUR\"\n      }\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "a3728667-6f48-445b-b0bb-4b8a35afc679",
+															"name": "400 response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Product A\",\n      \"sku\": \"PROD-A\",\n      \"price\": {\n        \"amount\": 10,\n        \"currency\": \"EUR\"\n      }\n    },\n    {\n      \"name\": \"Product B\",\n      \"sku\": \"PROD-B\",\n      \"price\": {\n        \"amount\": 20,\n        \"currency\": \"EUR\"\n      }\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "322dbd22-9cb5-434f-af7f-1d0bd58f77ff",
+															"name": "404 response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Product A\",\n      \"sku\": \"PROD-A\",\n      \"price\": {\n        \"amount\": 10,\n        \"currency\": \"EUR\"\n      }\n    },\n    {\n      \"name\": \"Product B\",\n      \"sku\": \"PROD-B\",\n      \"price\": {\n        \"amount\": 20,\n        \"currency\": \"EUR\"\n      }\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "bd7cce3a-2c6c-4ad1-9bcd-0da52a620f10",
+															"name": "409 response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Product A\",\n      \"sku\": \"PROD-A\",\n      \"price\": {\n        \"amount\": 10,\n        \"currency\": \"EUR\"\n      }\n    },\n    {\n      \"name\": \"Product B\",\n      \"sku\": \"PROD-B\",\n      \"price\": {\n        \"amount\": 20,\n        \"currency\": \"EUR\"\n      }\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Conflict",
+															"code": 409,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "234f6e1e-6332-4ccd-954c-787169fb0304",
+															"name": "422 response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Product A\",\n      \"sku\": \"PROD-A\",\n      \"price\": {\n        \"amount\": 10,\n        \"currency\": \"EUR\"\n      }\n    },\n    {\n      \"name\": \"Product B\",\n      \"sku\": \"PROD-B\",\n      \"price\": {\n        \"amount\": 20,\n        \"currency\": \"EUR\"\n      }\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+															"code": 422,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "2134c34f-7648-499f-b249-acd8edc4a66a",
+															"name": "500 response",
+															"originalRequest": {
+																"method": "POST",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"products\": [\n    {\n      \"name\": \"Product A\",\n      \"sku\": \"PROD-A\",\n      \"price\": {\n        \"amount\": 10,\n        \"currency\": \"EUR\"\n      }\n    },\n    {\n      \"name\": \"Product B\",\n      \"sku\": \"PROD-B\",\n      \"price\": {\n        \"amount\": 20,\n        \"currency\": \"EUR\"\n      }\n    }\n  ]\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Replace products of a catalog (bulk)",
+													"id": "8c2b6bad-e8e9-409b-bb64-cd7612622632",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": {
+																"scope": "",
+																"password": "43130938",
+																"username": "admin",
+																"clientSecret": "",
+																"clientId": "catalog-service",
+																"grant_type": "password_credentials",
+																"tokenName": "Catalog Service Token",
+																"addTokenTo": "header",
+																"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+															}
+														},
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"products\": [\n    {\n      \"productType\": \"DIGITAL\",\n      \"id\": \"67634d95-8585-45c7-a177-8a29d1b9ffa6\",\n      \"sku\": \"PROD-001-V2\",\n      \"name\": \"Product 1 (Updated)\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 21.99,\n        \"currency\": \"USD\"\n      },\n      \"fileSize\": 1536,\n      \"fileFormat\": \"pdf\",\n      \"downloadUrl\": \"https://example.com/download/product1-v2.pdf\"\n    },\n    {\n      \"productType\": \"DIGITAL\",\n      \"id\": \"f062bff5-75cc-4559-9deb-58611636ad1b\",\n      \"sku\": \"PROD-002-V2\",\n      \"name\": \"Product 2 (Updated)\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 31.99,\n        \"currency\": \"USD\"\n      },\n      \"fileSize\": 2560,\n      \"fileFormat\": \"epub\",\n      \"downloadUrl\": \"https://example.com/download/product2-v2.epub\"\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"id\": \"8bbed710-c7f5-470c-9b57-d6967430b1df\",\n      \"sku\": \"KEYB-001\",\n      \"name\": \"Teclado Mecánico Pro\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 79.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"length\": 15.0,\n        \"width\": 45.0,\n        \"height\": 5.0\n      },\n      \"stockQuantity\": 50,\n      \"shippable\": null\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"id\": \"1031d5b5-c615-4036-ac19-ab9ffd99ca91\",\n      \"sku\": \"MON-0274K-HDR\",\n      \"name\": \"Monitor 27'' 4K (Actualizado)\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 329.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"length\": 20.0,\n        \"width\": 60.0,\n        \"height\": 35.0\n      },\n      \"stockQuantity\": 18,\n      \"shippable\": null\n    },\n    {\n      \"productType\": \"DIGITAL\",\n      \"id\": \"2eab7ff1-81d1-41d9-8c5d-96e0285a17b7\",\n      \"sku\": \"DIGI-JAVA-001\",\n      \"name\": \"Curso Java Avanzado\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 99.9,\n        \"currency\": \"EUR\"\n      },\n      \"fileSize\": 1500,\n      \"fileFormat\": \"EXE\",\n      \"downloadUrl\": \"https://downloads.example.com/cursos/java-avanzado\"\n    },\n    {\n      \"productType\": \"PHYSICAL\",\n      \"id\": \"95155ac5-04e1-4ea5-ab81-ca7dd0a5f823\",\n      \"sku\": \"PHYS-KEYB-001\",\n      \"name\": \"Teclado Mecánico\",\n      \"status\": \"ACTIVE\",\n      \"price\": {\n        \"amount\": 79.99,\n        \"currency\": \"EUR\"\n      },\n      \"dimensions\": {\n        \"length\": 15.0,\n        \"width\": 45.0,\n        \"height\": 5.0\n      },\n      \"stockQuantity\": 50,\n      \"shippable\": true\n    }\n  ]\n}\n",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id",
+																"products"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "4ac84f87-e596-4d87-a2e0-d7f14bc43c17"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "14b1cab8-5bb7-4e48-9cc9-f6d570d28e87",
+															"name": "200 response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsReplaceRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "OK",
+															"code": 200,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "240eeb4f-0b90-41c0-9ffd-599d6dc49e75",
+															"name": "400 response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsReplaceRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Bad Request",
+															"code": 400,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "fa345046-c0b3-42f6-a020-b327c0a2d832",
+															"name": "404 response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsReplaceRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "f9156df4-b0a3-471a-b99c-705490e03b51",
+															"name": "422 response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsReplaceRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Unprocessable Entity (WebDAV) (RFC 4918)",
+															"code": 422,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "7136700d-4606-4e4d-b1ce-379345fc17bc",
+															"name": "500 response",
+															"originalRequest": {
+																"method": "PUT",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsReplaceRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												},
+												{
+													"name": "Remove products from a catalog (bulk)",
+													"id": "b72a97e6-d065-4be4-a006-64d0105d9011",
+													"protocolProfileBehavior": {
+														"disableBodyPruning": true
+													},
+													"request": {
+														"auth": {
+															"type": "oauth2",
+															"oauth2": {
+																"scope": "",
+																"password": "43130938",
+																"username": "admin",
+																"clientSecret": "",
+																"clientId": "catalog-service",
+																"grant_type": "password_credentials",
+																"tokenName": "Catalog Service Token",
+																"addTokenTo": "header",
+																"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+															}
+														},
+														"method": "DELETE",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"productIds\": [    \n    \"2eab7ff1-81d1-41d9-8c5d-96e0285a17b7\",\n    \"95155ac5-04e1-4ea5-ab81-ca7dd0a5f823\"\n  ]\n}\n",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id",
+																"products"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "4ac84f87-e596-4d87-a2e0-d7f14bc43c17"
+																}
+															]
+														}
+													},
+													"response": [
+														{
+															"id": "f6ce813c-2811-4fb7-a68a-56f1c2e7b551",
+															"name": "Removed",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsRemoveRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "No Content",
+															"code": 204,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "6943fb03-1911-4d47-9f11-5b88e5fa1eb8",
+															"name": "404 response",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsRemoveRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Not Found",
+															"code": 404,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														},
+														{
+															"id": "57dea2eb-7688-471e-8a8e-456394b9bfc5",
+															"name": "500 response",
+															"originalRequest": {
+																"method": "DELETE",
+																"header": [
+																	{
+																		"key": "Content-Type",
+																		"value": "application/json"
+																	}
+																],
+																"body": {
+																	"mode": "raw",
+																	"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogProductsRemoveRequest not found in the OpenAPI spec\"\n}",
+																	"options": {
+																		"raw": {
+																			"headerFamily": "json",
+																			"language": "json"
+																		}
+																	}
+																},
+																"url": {
+																	"raw": "{{baseUrl}}/api/v1/catalogs/:id/products",
+																	"host": [
+																		"{{baseUrl}}"
+																	],
+																	"path": [
+																		"api",
+																		"v1",
+																		"catalogs",
+																		":id",
+																		"products"
+																	],
+																	"variable": [
+																		{
+																			"key": "id",
+																			"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																		}
+																	]
+																}
+															},
+															"status": "Internal Server Error",
+															"code": 500,
+															"_postman_previewlanguage": "text",
+															"header": [],
+															"cookie": [],
+															"responseTime": null,
+															"body": ""
+														}
+													]
+												}
+											],
+											"id": "7533dea1-ca57-4699-ba7b-beceb2b20181"
+										},
+										{
+											"name": "Get catalog by id",
+											"id": "3d9b9ec5-cc33-42bd-8777-ecd68075a989",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "bearer",
+													"bearer": {
+														"token": "{{catalog_access_token}}"
+													}
+												},
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs/:id?expand=products",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs",
+														":id"
+													],
+													"query": [
+														{
+															"key": "expand",
+															"value": "products",
+															"description": "Optional expansions. Use `products` to include full product objects.\nIf not provided, only `productIds` are returned.\n"
+														}
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "11cac832-3721-47f5-b87a-ca38fb52fe0e"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "fc9c9411-20d5-4931-9f65-e0c16eb9886f",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id?expand=products",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"query": [
+																{
+																	"description": "Optional expansions. Use `products` to include full product objects.\nIf not provided, only `productIds` are returned.\n",
+																	"key": "expand",
+																	"value": "products"
+																}
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "7f779e21-93be-47f9-938f-5685eb6fc385",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id?expand=products",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"query": [
+																{
+																	"description": "Optional expansions. Use `products` to include full product objects.\nIf not provided, only `productIds` are returned.\n",
+																	"key": "expand",
+																	"value": "products"
+																}
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "9bd8df58-f4a0-4bd4-a3db-be515f8b3981",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "GET",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id?expand=products",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"query": [
+																{
+																	"description": "Optional expansions. Use `products` to include full product objects.\nIf not provided, only `productIds` are returned.\n",
+																	"key": "expand",
+																	"value": "products"
+																}
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "123e4567-e89b-12d3-a456-426614174000"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Replace catalog",
+											"id": "d88a3eaf-4250-4d03-a2cb-e6d8fefa305e",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "",
+														"password": "43130938",
+														"username": "admin",
+														"clientSecret": "",
+														"clientId": "catalog-service",
+														"grant_type": "password_credentials",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "PUT",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Summer 2026\",\n  \"status\": \"ACTIVE\"\n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "4ac84f87-e596-4d87-a2e0-d7f14bc43c17"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "4b3518a9-6261-4c7d-a4ed-1b3e8723c4ea",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "34d4fdb1-08fd-4d06-8420-4f4a6ac2ea79",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "5114ee2d-e092-412e-b176-485e6a147785",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "37fe4a91-5b9e-476c-bcb5-7e5fb6f7442f",
+													"name": "409 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Conflict",
+													"code": 409,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "c9f4f1d4-d7d4-4009-a9c5-e670809de8fc",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "PUT",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogUpdateRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Partially update catalog",
+											"id": "4397f91c-7b70-4393-8fba-eef44745b2f3",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"auth": {
+													"type": "oauth2",
+													"oauth2": {
+														"scope": "",
+														"password": "43130938",
+														"username": "admin",
+														"clientSecret": "",
+														"clientId": "catalog-service",
+														"grant_type": "password_credentials",
+														"tokenName": "Catalog Service Token",
+														"addTokenTo": "header",
+														"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+													}
+												},
+												"method": "PATCH",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Summer 2026\"  \n}\n",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs",
+														":id"
+													],
+													"variable": [
+														{
+															"key": "id",
+															"value": "4ac84f87-e596-4d87-a2e0-d7f14bc43c17"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "5da8d7e8-56f4-493b-afb2-4e49ad3ebd65",
+													"name": "200 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "OK",
+													"code": 200,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "bca9a2a9-283b-4283-9615-a777b65521c0",
+													"name": "400 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Bad Request",
+													"code": 400,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "8816a59d-6bac-497d-975a-5882a087f1f8",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2587c925-9bcb-42b3-9b77-e01b5235b4f3",
+													"name": "409 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Conflict",
+													"code": 409,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "4a8dabf5-2db6-4e7c-a206-89d0a0ce9045",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "PATCH",
+														"header": [
+															{
+																"key": "Content-Type",
+																"value": "application/json"
+															}
+														],
+														"body": {
+															"mode": "raw",
+															"raw": "{\n  \"value\": \"reference catalog-requests.yaml#/components/schemas/CatalogPatchRequest not found in the OpenAPI spec\"\n}",
+															"options": {
+																"raw": {
+																	"headerFamily": "json",
+																	"language": "json"
+																}
+															}
+														},
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										},
+										{
+											"name": "Delete catalog",
+											"id": "7cd7ff37-95fb-43b0-9c72-d960ffd99753",
+											"protocolProfileBehavior": {
+												"disableBodyPruning": true
+											},
+											"request": {
+												"method": "DELETE",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs",
+														":id"
+													],
+													"variable": [
+														{
+															"id": "d575c3c8-62a8-4ba6-a458-24558a389e6d",
+															"key": "id",
+															"value": "274b832b-9413-555f-53eb-f2296bcee399"
+														}
+													]
+												}
+											},
+											"response": [
+												{
+													"id": "b0737e1f-c854-4667-bc03-996afc87b8d5",
+													"name": "Deleted",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "No Content",
+													"code": 204,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "1b3ab102-52b0-4b4d-bb63-31453ce1a580",
+													"name": "404 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Not Found",
+													"code": 404,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												},
+												{
+													"id": "2b6dbab6-ded3-4992-97d7-cf89ceb3af20",
+													"name": "500 response",
+													"originalRequest": {
+														"method": "DELETE",
+														"header": [],
+														"url": {
+															"raw": "{{baseUrl}}/api/v1/catalogs/:id",
+															"host": [
+																"{{baseUrl}}"
+															],
+															"path": [
+																"api",
+																"v1",
+																"catalogs",
+																":id"
+															],
+															"variable": [
+																{
+																	"key": "id",
+																	"value": "274b832b-9413-555f-53eb-f2296bcee399"
+																}
+															]
+														}
+													},
+													"status": "Internal Server Error",
+													"code": 500,
+													"_postman_previewlanguage": "text",
+													"header": [],
+													"cookie": [],
+													"responseTime": null,
+													"body": ""
+												}
+											]
+										}
+									],
+									"id": "e8683b3d-768b-4ed3-a2a0-d283f1a10543"
+								},
+								{
+									"name": "List catalogs",
+									"id": "adcf9573-2a4e-4779-b746-d2ea91871e36",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": {
+												"scope": "",
+												"password": "43130938",
+												"username": "admin",
+												"clientSecret": "",
+												"clientId": "catalog-service",
+												"grant_type": "password_credentials",
+												"tokenName": "Catalog Service Token",
+												"addTokenTo": "header",
+												"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+											}
+										},
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/api/v1/catalogs?q=&status=&page=0&size=20&sort=id,desc",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"api",
+												"v1",
+												"catalogs"
+											],
+											"query": [
+												{
+													"key": "q",
+													"value": "",
+													"description": "Optional search query by name"
+												},
+												{
+													"key": "status",
+													"value": "",
+													"description": "Optional status filter"
+												},
+												{
+													"key": "page",
+													"value": "0",
+													"description": "Page index (0-based)"
+												},
+												{
+													"key": "size",
+													"value": "20",
+													"description": "Page size"
+												},
+												{
+													"key": "sort",
+													"value": "id,desc",
+													"description": "Sort expression, e.g. \"createdAt,desc\""
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"id": "f1966758-0ecc-4fa6-bdc1-4bfd7d972e02",
+											"name": "200 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs?q=string&value=reference catalog-schema.yaml%23/components/schemas/CatalogStatus not found in the OpenAPI spec&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"description": "Optional status filter",
+															"key": "value",
+															"value": "reference catalog-schema.yaml#/components/schemas/CatalogStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Page index (0-based)",
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"description": "Page size",
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "a711eead-b335-445b-a444-c80fd7b55811",
+											"name": "400 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs?q=string&value=reference catalog-schema.yaml%23/components/schemas/CatalogStatus not found in the OpenAPI spec&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"description": "Optional status filter",
+															"key": "value",
+															"value": "reference catalog-schema.yaml#/components/schemas/CatalogStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Page index (0-based)",
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"description": "Page size",
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "b68c6e10-7c60-4b7b-b01f-5dcd05477c10",
+											"name": "500 response",
+											"originalRequest": {
+												"method": "GET",
+												"header": [],
+												"url": {
+													"raw": "{{baseUrl}}/api/v1/catalogs?q=string&value=reference catalog-schema.yaml%23/components/schemas/CatalogStatus not found in the OpenAPI spec&page=0&size=20&sort=string",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"api",
+														"v1",
+														"catalogs"
+													],
+													"query": [
+														{
+															"description": "Optional search query by name",
+															"key": "q",
+															"value": "string"
+														},
+														{
+															"description": "Optional status filter",
+															"key": "value",
+															"value": "reference catalog-schema.yaml#/components/schemas/CatalogStatus not found in the OpenAPI spec"
+														},
+														{
+															"description": "Page index (0-based)",
+															"key": "page",
+															"value": "0"
+														},
+														{
+															"description": "Page size",
+															"key": "size",
+															"value": "20"
+														},
+														{
+															"description": "Sort expression, e.g. \"createdAt,desc\"",
+															"key": "sort",
+															"value": "string"
+														}
+													]
+												}
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								},
+								{
+									"name": "Create catalog",
+									"id": "4650e213-b1a0-4927-8089-f96c5f3da486",
+									"protocolProfileBehavior": {
+										"disableBodyPruning": true
+									},
+									"request": {
+										"auth": {
+											"type": "oauth2",
+											"oauth2": {
+												"grant_type": "client_credentials",
+												"scope": "catalog.read catalog.write",
+												"clientSecret": "KPIRHbxU9Ear4qTaE55wKynwhsGtRhI2",
+												"password": "43130938",
+												"username": "admin",
+												"clientId": "catalog-service",
+												"tokenName": "Catalog Service Token",
+												"addTokenTo": "header",
+												"accessTokenUrl": "http://localhost:8081/realms/spring-middleware/protocol/openid-connect/token"
+											}
+										},
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"name\": \"Summer 2028\",\n  \"status\": \"INACTIVE\"\n}",
+											"options": {
+												"raw": {
+													"headerFamily": "json",
+													"language": "json"
+												}
+											}
+										},
+										"url": "{{baseUrl}}/api/v1/catalogs"
+									},
+									"response": [
+										{
+											"id": "320dd76a-0028-4cdf-80e2-b6da0c0ee1fd",
+											"name": "201 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Summer 2026\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/catalogs"
+											},
+											"status": "Created",
+											"code": 201,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "117f9918-632f-44d0-833f-03938f60e315",
+											"name": "400 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Summer 2026\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/catalogs"
+											},
+											"status": "Bad Request",
+											"code": 400,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "f4c9d52e-872d-4da3-8228-4f35dd06e2e4",
+											"name": "409 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Summer 2026\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/catalogs"
+											},
+											"status": "Conflict",
+											"code": 409,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										},
+										{
+											"id": "fb318c54-646f-4f80-887c-9794ed7a10d5",
+											"name": "500 response",
+											"originalRequest": {
+												"method": "POST",
+												"header": [
+													{
+														"key": "Content-Type",
+														"value": "application/json"
+													}
+												],
+												"body": {
+													"mode": "raw",
+													"raw": "{\n  \"name\": \"Summer 2026\"\n}",
+													"options": {
+														"raw": {
+															"headerFamily": "json",
+															"language": "json"
+														}
+													}
+												},
+												"url": "{{baseUrl}}/api/v1/catalogs"
+											},
+											"status": "Internal Server Error",
+											"code": 500,
+											"_postman_previewlanguage": "text",
+											"header": [],
+											"cookie": [],
+											"responseTime": null,
+											"body": ""
+										}
+									]
+								}
+							],
+							"id": "1e6a28a1-8217-416f-998d-b2e850628903"
+						}
+					],
+					"id": "f38943f0-8399-486c-a884-8f88fe3161fe"
+				}
+			],
+			"id": "dde02b23-560d-4ce9-9499-f1fe7cfa2359"
+		}
+	],
+	"auth": {
+		"type": "oauth2",
+		"oauth2": {
+			"addTokenTo": "header"
+		}
+	},
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "282a538e-e390-4cfe-a899-074deed6d737",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					"const tokenEndpoint = pm.variables.get(\"token_endpoint\");\r",
+					"const grantType = pm.variables.get(\"grant_type\");\r",
+					"const clientId = pm.variables.get(\"catalog_client_id\");\r",
+					"const clientSecret = pm.variables.get(\"catalog_client_secret\");\r",
+					"const scopes = pm.variables.get(\"catalog_scopes\");\r",
+					"\r",
+					"// Token actual\r",
+					"const currentToken = pm.environment.get(\"catalog_access_token\");\r",
+					"const expiresAt = pm.environment.get(\"catalog_token_expires_at\");\r",
+					"\r",
+					"// Tiempo actual\r",
+					"const now = Math.floor(Date.now() / 1000);\r",
+					"\r",
+					"// Margen de seguridad (30s)\r",
+					"const SAFETY_MARGIN = 30;\r",
+					"\r",
+					"// 🔍 Validar si el token sigue siendo válido\r",
+					"if (currentToken && expiresAt && (now < (parseInt(expiresAt) - SAFETY_MARGIN))) {\r",
+					"    console.log(\"Reutilizando token existente\");\r",
+					"    return;\r",
+					"}\r",
+					"\r",
+					"console.log(\"Solicitando nuevo token OAuth2...\");\r",
+					"\r",
+					"pm.sendRequest({\r",
+					"    url: tokenEndpoint,\r",
+					"    method: \"POST\",\r",
+					"    header: {\r",
+					"        \"Content-Type\": \"application/x-www-form-urlencoded\"\r",
+					"    },\r",
+					"    body: {\r",
+					"        mode: \"urlencoded\",\r",
+					"        urlencoded: [\r",
+					"            { key: \"grant_type\", value: grantType },\r",
+					"            { key: \"client_id\", value: clientId },\r",
+					"            { key: \"client_secret\", value: clientSecret },\r",
+					"            { key: \"scope\", value: scopes }\r",
+					"        ]\r",
+					"    }\r",
+					"}, function (err, res) {\r",
+					"\r",
+					"    if (err) {\r",
+					"        console.error(\"Error obteniendo token:\", err);\r",
+					"        throw new Error(\"No se pudo obtener el token OAuth2\");\r",
+					"    }\r",
+					"\r",
+					"    if (!res || res.code !== 200) {\r",
+					"        console.error(\"Respuesta OAuth2 no válida:\", res ? res.text() : \"sin respuesta\");\r",
+					"        throw new Error(\"Respuesta OAuth2 no válida\");\r",
+					"    }\r",
+					"\r",
+					"    const json = res.json();\r",
+					"\r",
+					"    if (!json.access_token) {\r",
+					"        console.error(\"Respuesta sin access_token:\", json);\r",
+					"        throw new Error(\"No se encontró access_token\");\r",
+					"    }\r",
+					"\r",
+					"    // Guardar token\r",
+					"    pm.environment.set(\"catalog_access_token\", json.access_token);\r",
+					"\r",
+					"    // Guardar expiración real (timestamp)\r",
+					"    if (json.expires_in) {\r",
+					"        const expiresAt = now + parseInt(json.expires_in);\r",
+					"        pm.environment.set(\"catalog_token_expires_at\", expiresAt.toString());\r",
+					"    }\r",
+					"\r",
+					"    console.log(\"Nuevo token obtenido correctamente\");\r",
+					"});"
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "b37ec907-30f4-4c30-a7f1-a010a692336d",
+				"type": "text/javascript",
+				"packages": {},
+				"requests": {},
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8081"
+		}
+	]
+}
